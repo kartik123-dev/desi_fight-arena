@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Desi Fight Arena: Overdrive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <header class="topbar">
+      <div class="brand"><span class="mark">DFA</span><span>DESI FIGHT ARENA <small>OVERDRIVE</small></span></div>
+      <div class="top-actions"><button id="soundBtn" class="small-btn">Sound: ON</button><button id="fullscreenBtn" class="small-btn">Fullscreen</button></div>
+    </header>
+
+    <section id="menu" class="screen">
+      <div class="hero">
+        <div class="eyebrow">ARCADE COMBAT • PROTOTYPE 0.1</div>
+        <h1>ENTER THE<br><em>ARENA.</em></h1>
+        <p>Pick a fighter. Learn the rhythm. Own the round.</p>
+        <div class="menu-controls">
+          <label>Game mode
+            <select id="modeSelect">
+              <option value="cpu">1 Player vs CPU</option>
+              <option value="local">Local 2 Player</option>
+            </select>
+          </label>
+          <label>Your fighter
+            <select id="fighterSelect">
+              <option value="volt">VOLT • The Street Spark</option>
+              <option value="blaze">BLAZE • The Ember Guard</option>
+            </select>
+          </label>
+          <button id="startBtn" class="primary">START FIGHT <span>▶</span></button>
+        </div>
+        <div class="key-hint">
+          <b>PLAYER 1</b> A / D move · W jump · S block · F punch · G kick
+          <br><b>PLAYER 2</b> ← / → move · ↑ jump · ↓ block · K punch · L kick
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="sun"></div><div class="gridfloor"></div>
+        <div class="fighter-art fighter-one"><div class="head"></div><div class="body"></div><div class="arm"></div><div class="leg"></div></div>
+        <div class="fighter-art fighter-two"><div class="head"></div><div class="body"></div><div class="arm"></div><div class="leg"></div></div>
+        <div class="versus">VS</div>
+        <div class="art-caption">NO SHORTCUTS. JUST SKILL.</div>
+      </div>
+    </section>
+
+    <section id="game" class="screen hidden">
+      <div class="hud">
+        <div class="player-hud">
+          <div class="fighter-name" id="name1">VOLT</div>
+          <div class="bar"><div id="health1" class="health"></div></div>
+          <div class="subbar"><div id="energy1" class="energy"></div></div>
+        </div>
+        <div class="round-info"><div>ROUND 01</div><strong id="timer">60</strong><small id="status">FIGHT!</small></div>
+        <div class="player-hud right">
+          <div class="fighter-name" id="name2">CPU</div>
+          <div class="bar"><div id="health2" class="health"></div></div>
+          <div class="subbar"><div id="energy2" class="energy"></div></div>
+        </div>
+      </div>
+      <div class="arena-wrap">
+        <canvas id="arena" width="1000" height="560" aria-label="Fighting game arena"></canvas>
+        <div id="message" class="message"></div>
+      </div>
+      <div class="game-footer">
+        <div class="controls-copy">P1: A/D move · W jump · S block · F punch · G kick · H special</div>
+        <div class="controls-copy">P2: ←/→ move · ↑ jump · ↓ block · K punch · L kick · ; special</div>
+        <button id="backBtn" class="small-btn">Exit match</button>
+      </div>
+      <div class="touch-controls">
+        <div class="touch-group">
+          <button data-key="a">◀</button><button data-key="d">▶</button><button data-key="w">JUMP</button>
+        </div>
+        <div class="touch-group">
+          <button data-key="s">GUARD</button><button data-key="f">PUNCH</button><button data-key="g">KICK</button><button data-key="h">SPECIAL</button>
+        </div>
+      </div>
+    </section>
+    <footer class="footnote">Original browser-game prototype · Runs locally in your browser</footer>
+  </main>
+  <script src="src/game.js"></script>
+</body>
+</html>
